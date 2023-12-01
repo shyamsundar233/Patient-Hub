@@ -20,6 +20,18 @@ public class GlobalExceptionHandler {
         return "page-not-found";
     }
 	
+	@ExceptionHandler(UnauthorizedException.class)
+	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ResponseEntity<String> handleUnauthorizedException(UnauthorizedException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+	
+	@ExceptionHandler(ForbiddenException.class)
+	@ResponseStatus(HttpStatus.FORBIDDEN)
+    public ResponseEntity<String> handleForbiddenException(ForbiddenException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
+    }
+	
 	@ExceptionHandler(PatientNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ResponseEntity<JSONObject> patientNotFoundException(Exception ex) {

@@ -78,7 +78,7 @@ public class SecurityConfig {
     		.authorizeHttpRequests((authorize) -> authorize
     				
     				//Patient API
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.POST.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
@@ -91,9 +91,6 @@ public class SecurityConfig {
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole(ADMIN, SRDOCTOR)
     				.anyRequest().authenticated()
-    		)
-    		.exceptionHandling(exception -> exception
-    				.accessDeniedPage("/access-denied")
     		);
     	
 		return http.build();
