@@ -69,16 +69,19 @@ public class SecurityConfig {
     				.loginPage("/login")
     				.loginProcessingUrl("/processLoginForm")
     				.permitAll()
+    				.defaultSuccessUrl("/")
     		)
     		.logout(logout -> logout
     				.logoutUrl("/logout")
+    				.logoutSuccessUrl("/login?logout")
     				.invalidateHttpSession(true)
+    				.deleteCookies("JSESSIONID")
     				.permitAll()
     		)
     		.authorizeHttpRequests((authorize) -> authorize
     				
     				//Patient API
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.POST.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
