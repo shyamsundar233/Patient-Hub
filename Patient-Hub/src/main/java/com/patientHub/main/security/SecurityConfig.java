@@ -3,6 +3,7 @@ package com.patientHub.main.security;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -19,6 +20,18 @@ import io.netty.handler.codec.http.HttpMethod;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Value("${role.admin}")
+	private String ADMIN;
+	
+	@Value("${role.srdoctor}")
+	private String SRDOCTOR;
+	
+	@Value("${role.doctor}")
+	private String DOCTOR;
+	
+	@Value("${role.trainee}")
+	private String TRAINEE;
 	
 	@Bean
     DataSource dataSource() { 
@@ -52,22 +65,35 @@ public class SecurityConfig {
     	http
     		.csrf(csrf -> csrf.disable())
     		.httpBasic(Customizer.withDefaults())
+    		.formLogin(form -> form
+    				.loginPage("/login")
+    				.loginProcessingUrl("/processLoginForm")
+    				.permitAll()
+    		)
+    		.logout(logout -> logout
+    				.logoutUrl("/logout")
+    				.invalidateHttpSession(true)
+    				.permitAll()
+    		)
     		.authorizeHttpRequests((authorize) -> authorize
     				
     				//Patient API
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR", "TRAINEE")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.GET.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR", "TRAINEE")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.POST.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.PUT.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.DELETE.toString())).hasAnyRole("ADMIN", "SRDOCTOR")
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient", HttpMethod.POST.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/patient/**", HttpMethod.DELETE.toString())).hasAnyRole(ADMIN, SRDOCTOR)
     				
     				//Medical records API
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.GET.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR", "TRAINEE")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.GET.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR", "TRAINEE")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.POST.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole("ADMIN", "SRDOCTOR", "DOCTOR")
-    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole("ADMIN", "SRDOCTOR")
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.GET.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR, TRAINEE)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.POST.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, SRDOCTOR, DOCTOR)
+    				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole(ADMIN, SRDOCTOR)
     				.anyRequest().authenticated()
+    		)
+    		.exceptionHandling(exception -> exception
+    				.accessDeniedPage("/access-denied")
     		);
     	
 		return http.build();

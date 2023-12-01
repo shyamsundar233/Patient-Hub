@@ -43,7 +43,7 @@ public class MedicalRecordController {
 	}
 	
 	@PostMapping("/medicalRecord")
-	public JSONObject saveMedicalRecord(@RequestBody MedicalRecord medicalRecord) {
+	public JSONObject saveMedicalRecord(@RequestBody MedicalRecord medicalRecord) throws Exception {
 		JSONObject response = new JSONObject();		
 		
 		response.put("Medical Record", medicalRecordService.saveMedicalRecord(medicalRecord));

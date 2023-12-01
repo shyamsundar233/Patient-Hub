@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.patientHub.main.exception.PatientInvalidDataException;
+import com.patientHub.main.exception.PatientMandatoryFieldNotFoundException;
 import com.patientHub.main.model.Patient;
 import com.patientHub.main.service.PatientService;
 
@@ -44,7 +46,7 @@ public class PatientController {
 	}
 	
 	@PostMapping("/patient")
-	public JSONObject savePatient(@RequestBody Patient patient) {
+	public JSONObject savePatient(@RequestBody Patient patient) throws PatientMandatoryFieldNotFoundException, PatientInvalidDataException {
 		JSONObject response = new JSONObject();		
 		
 		response.put("Patient", patientService.savePatient(patient));

@@ -10,7 +10,7 @@ public interface MedicalRecordService {
 	
 	public MedicalRecord getMedicalRecordById(Long medicalRecordId);
 	
-	public String saveMedicalRecord(MedicalRecord medicalRecord);
+	public String saveMedicalRecord(MedicalRecord medicalRecord) throws Exception;
 	
 	public String deleteMedicalRecord(Long medicalRecordId);
 

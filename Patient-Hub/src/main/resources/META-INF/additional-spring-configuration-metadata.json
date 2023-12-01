@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "role.admin",
+    "type": "java.lang.String",
+    "description": "A description for 'role.admin'"
+  },
+  {
+    "name": "role.srdoctor",
+    "type": "java.lang.String",
+    "description": "A description for 'role.srdoctor'"
+  },
+  {
+    "name": "role.doctor",
+    "type": "java.lang.String",
+    "description": "A description for 'role.doctor'"
+  },
+  {
+    "name": "role.trainee",
+    "type": "java.lang.String",
+    "description": "A description for 'role.trainee'"
+  },
+  {
+    "name": "spring.security.access-denied-page",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.security.access-denied-page'"
+  },
+  {
+    "name": "patient.gender",
+    "type": "java.lang.String",
+    "description": "A description for 'patient.gender'"
+  },
+  {
+    "name": "patient.type",
+    "type": "java.lang.String",
+    "description": "A description for 'patient.type'"
+  }
+]}
