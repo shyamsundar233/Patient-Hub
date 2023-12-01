@@ -1,9 +1,14 @@
 package com.patientHub.main.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Patient {
@@ -19,6 +24,9 @@ public class Patient {
 	private int patientAge;
 	
 	private String patientType;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "patient")
+	private List<MedicalRecord> medicalRecords = new ArrayList<MedicalRecord>();
 
 	public Long getPatientId() {
 		return patientId;
