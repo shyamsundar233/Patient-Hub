@@ -2,6 +2,7 @@ package com.patientHub.main.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -67,6 +68,25 @@ public class Patient {
 	public void setPatientType(String patientType) {
 		this.patientType = patientType;
 	}
+	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Patient patient = (Patient) obj;
+
+        return Objects.equals(patientId, patient.patientId)
+                && Objects.equals(patientName, patient.patientName)
+                && Objects.equals(patientGender, patient.patientGender)
+                && Objects.equals(patientAge, patient.patientAge)
+                && Objects.equals(patientType, patient.patientType);
+    }
+
+    @Override
+    public int hashCode() {
+        return patientId != null ? patientId.hashCode() : 0;
+    }
 
 	@Override
 	public String toString() {

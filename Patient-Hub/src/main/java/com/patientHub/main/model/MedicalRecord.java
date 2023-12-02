@@ -1,6 +1,7 @@
 package com.patientHub.main.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -75,6 +76,26 @@ public class MedicalRecord {
 	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
+	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        MedicalRecord record = (MedicalRecord) obj;
+
+        return Objects.equals(medicalRecordId, record.medicalRecordId)
+                && Objects.equals(patientDiagnosis, record.patientDiagnosis)
+                && Objects.equals(patientTreatment, record.patientTreatment)
+                && Objects.equals(recordDate, record.recordDate)
+                && Objects.equals(recordNotes, record.recordNotes)
+                && Objects.equals(patient, record.patient);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(medicalRecordId, patientDiagnosis, patientTreatment, recordDate, recordNotes, patient);
+    }
 
 	@Override
 	public String toString() {
