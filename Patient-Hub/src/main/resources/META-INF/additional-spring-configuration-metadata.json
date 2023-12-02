@@ -38,5 +38,50 @@
     "name": "role.admin",
     "type": "java.lang.String",
     "description": "A description for 'role.admin'"
+  },
+  {
+    "name": "role.architect",
+    "type": "java.lang.String",
+    "description": "A description for 'role.architect'"
+  },
+  {
+    "name": "role.documentation_specialist",
+    "type": "java.lang.String",
+    "description": "A description for 'role.documentation_specialist'"
+  },
+  {
+    "name": "role.developer",
+    "type": "java.lang.String",
+    "description": "A description for 'role.developer'"
+  },
+  {
+    "name": "role.development_manager",
+    "type": "java.lang.String",
+    "description": "A description for 'role.development_manager'"
+  },
+  {
+    "name": "role.support_engineer",
+    "type": "java.lang.String",
+    "description": "A description for 'role.support_engineer'"
+  },
+  {
+    "name": "role.system_administrator",
+    "type": "java.lang.String",
+    "description": "A description for 'role.system_administrator'"
+  },
+  {
+    "name": "role.quality_engineer",
+    "type": "java.lang.String",
+    "description": "A description for 'role.quality_engineer'"
+  },
+  {
+    "name": "role.security_engineer",
+    "type": "java.lang.String",
+    "description": "A description for 'role.security_engineer'"
+  },
+  {
+    "name": "role.team_lead",
+    "type": "java.lang.String",
+    "description": "A description for 'role.team_lead'"
   }
 ]}
