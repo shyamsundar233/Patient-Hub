@@ -3,6 +3,9 @@ package com.patientHub.main.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.patientHub.main.Dao.MedicalRecordDao;
@@ -17,12 +20,17 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 	@Autowired
 	private MedicalRecordDao medicalRecordDao;
 	
+	@Autowired
+	private CacheManager cacheManager;
+	
 	@Override
+	@Cacheable(value = "allMedicalRec")
 	public List<MedicalRecord> getAllMedicalRecords() {
 		return medicalRecordDao.getAllMedicalRecords();
 	}
 
 	@Override
+	@Cacheable(value = "medicalRec")
 	public MedicalRecord getMedicalRecordById(Long medicalRecordId) {
 		
 		MedicalRecord medicalRecord = medicalRecordDao.getMedicalRecordById(medicalRecordId);
@@ -36,13 +44,17 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 
 	@Override
 	public String saveMedicalRecord(MedicalRecord medicalRecord) throws Exception {
-		validateMedicalRecord(medicalRecord);		
-		return medicalRecordDao.saveMedicalRecord(medicalRecord);
+		validateMedicalRecord(medicalRecord);	
+		String message = medicalRecordDao.saveMedicalRecord(medicalRecord);
+		evictCache();
+		return message;
 	}
 
 	@Override
 	public String deleteMedicalRecord(Long medicalRecordId) {
-		return medicalRecordDao.deleteMedicalRecord(medicalRecordId);
+		String message = medicalRecordDao.deleteMedicalRecord(medicalRecordId);
+		evictCache();
+		return message;
 	}
 	
 	private void validateMedicalRecord(MedicalRecord medicalRecord) throws Exception {
@@ -56,6 +68,12 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 		if(medicalRecord.getPatientTreatment().chars().anyMatch(Character::isDigit)) {
 			throw new MedicalRecInvalidDataException("Numbers are not allowed in treatment field");
 		}		
+	}
+	
+	@CacheEvict(value = "allMedicalRec", allEntries = true)
+	public void evictCache() {
+		cacheManager.getCache("allMedicalRec").clear();		
+		cacheManager.getCache("medicalRec").clear();		
 	}
 
 }
