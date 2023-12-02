@@ -70,10 +70,17 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 		}		
 	}
 	
+	@Override
+	@Cacheable(value = "medicalRecByPatId")
+	public List<MedicalRecord> getAllMedicalRecordsByPatientId(Long patientId) {
+		return medicalRecordDao.getAllMedicalRecordsByPatientId(patientId);
+	}
+	
 	@CacheEvict(value = "allMedicalRec", allEntries = true)
 	public void evictCache() {
 		cacheManager.getCache("allMedicalRec").clear();		
-		cacheManager.getCache("medicalRec").clear();		
+		cacheManager.getCache("medicalRec").clear();
+		cacheManager.getCache("medicalRecByPatId").clear();
 	}
 
 }

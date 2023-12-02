@@ -118,6 +118,16 @@ public class DevConfig {
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.POST.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD, DEVELOPER, SECURITY_ENGINEER)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, TEAM_LEAD)
+    				
+    				//URL Restrictions
+    				.requestMatchers(new AntPathRequestMatcher("/showAddPatient", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/addPatient", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddMedicalRec", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/addMedicalRecord", HttpMethod.POST.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/editPatient", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD, DEVELOPER, SECURITY_ENGINEER)
+    				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD, DEVELOPER, SECURITY_ENGINEER)
+    				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, TEAM_LEAD)
     				.anyRequest().authenticated()
     		);
     	

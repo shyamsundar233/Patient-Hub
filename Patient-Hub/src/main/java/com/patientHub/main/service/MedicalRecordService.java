@@ -13,5 +13,7 @@ public interface MedicalRecordService {
 	public String saveMedicalRecord(MedicalRecord medicalRecord) throws Exception;
 	
 	public String deleteMedicalRecord(Long medicalRecordId);
+	
+	public List<MedicalRecord> getAllMedicalRecordsByPatientId(Long patientId);
 
 }

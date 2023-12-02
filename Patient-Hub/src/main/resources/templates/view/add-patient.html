@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+	}
+	
+	.container {
+	    max-width: 400px;
+	    margin: 50px auto;
+	    padding: 20px;
+	    background-color: #fff;
+	    border-radius: 5px;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	h2 {
+	    text-align: center;
+	}
+	
+	label {
+	    display: block;
+	    margin-top: 10px;
+	}
+	
+	input, select {
+	    width: 100%;
+	    padding: 8px;
+	    margin-top: 5px;
+	    margin-bottom: 15px;
+	    box-sizing: border-box;
+	}
+	
+	button {
+	    background-color: #4caf50;
+	    color: white;
+	    padding: 10px 15px;
+	    border: none;
+	    border-radius: 3px;
+	    cursor: pointer;
+	    width: 100%;
+	}
+	
+	button:hover {
+	    background-color: #45a049;
+	}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Patient</h2>
+    <form th:action="@{/addPatient}" th:object="${patient}" method="post">
+    	
+    	<input type="hidden" th:value="*{patientId}" th:field="*{patientId}"/>
+    	
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" th:value="*{patientName}" th:field="*{patientName}" required>
+
+        <label for="patientGender">Gender:</label>
+        <select id="patientGender" name="patientGender" th:value="*{patientGender}" th:field="*{patientGender}" required>
+            <option th:each="gender : ${genderList}" th:value="${gender}" th:text="${gender}">Male</option>
+        </select>
+
+        <label for="patientAge">Age:</label>
+        <input type="number" id="patientAge" name="patientAge" th:value="*{patientAge}" th:field="*{patientAge}" required>
+
+		<label for="patientType">Patient Type:</label>
+        <select id="patientType" name="patientType" th:value="*{patientType}" th:field="*{patientType}" required>
+            <option th:each="type : ${typesList}" th:value="${type}" th:text="${type}"></option>
+        </select>
+        
+        <button type="submit">Add Patient</button>
+    </form>
+</div>
+
+</body>
+</html>

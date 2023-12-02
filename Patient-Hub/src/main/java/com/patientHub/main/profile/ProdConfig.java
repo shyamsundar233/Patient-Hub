@@ -3,6 +3,7 @@ package com.patientHub.main.profile;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,8 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import com.patientHub.main.exception.CustomAccessDeniedHandler;
 
 import io.netty.handler.codec.http.HttpMethod;
 
@@ -51,6 +54,9 @@ public class ProdConfig {
 
     @Value("${role.receptionist}")
     private String RECEPTIONIST;
+    
+    @Autowired
+    private CustomAccessDeniedHandler customAccessDeniedHandler;
 	
 	@Bean
     DataSource dataSource() { 
@@ -91,9 +97,9 @@ public class ProdConfig {
     		.httpBasic(Customizer.withDefaults())
     		.formLogin(form -> form
     				.loginPage("/login")
-    				.loginProcessingUrl("/processLoginForm")
+    				.loginProcessingUrl("/processLoginForm")    				
+    				.defaultSuccessUrl("/") 
     				.permitAll()
-    				.defaultSuccessUrl("/")
     		)
     		.logout(logout -> logout
     				.logoutUrl("/logout")
@@ -117,7 +123,20 @@ public class ProdConfig {
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.POST.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
+    				
+    				//URL Restrictions
+    				.requestMatchers(new AntPathRequestMatcher("/showAddPatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/addPatient", HttpMethod.POST.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddMedicalRec", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/addMedicalRecord", HttpMethod.POST.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/editPatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
+    				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
     				.anyRequest().authenticated()
+    		)
+    		.exceptionHandling(exception -> exception
+    				.accessDeniedHandler(customAccessDeniedHandler)
     		);
     	
 		return http.build();

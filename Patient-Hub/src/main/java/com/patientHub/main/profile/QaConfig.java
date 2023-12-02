@@ -114,6 +114,16 @@ public class QaConfig {
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord", HttpMethod.POST.toString())).hasAnyRole(AUTOMATION_ENGINEER, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.PUT.toString())).hasAnyRole(QA_ANALYST, AUTOMATION_ENGINEER, DOCUMENTATION_SPECIALIST, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/api/v1/medicalRecord/**", HttpMethod.DELETE.toString())).hasAnyRole(QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				
+    				//URL Restrictions
+    				.requestMatchers(new AntPathRequestMatcher("/showAddPatient", HttpMethod.GET.toString())).hasAnyRole(AUTOMATION_ENGINEER, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/addPatient", HttpMethod.POST.toString())).hasAnyRole(AUTOMATION_ENGINEER, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddMedicalRec", HttpMethod.GET.toString())).hasAnyRole(AUTOMATION_ENGINEER, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/addMedicalRecord", HttpMethod.POST.toString())).hasAnyRole(AUTOMATION_ENGINEER, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/editPatient", HttpMethod.GET.toString())).hasAnyRole(QA_ANALYST, AUTOMATION_ENGINEER, DOCUMENTATION_SPECIALIST, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(QA_ANALYST, AUTOMATION_ENGINEER, DOCUMENTATION_SPECIALIST, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
     				.anyRequest().authenticated()
     		);
     	

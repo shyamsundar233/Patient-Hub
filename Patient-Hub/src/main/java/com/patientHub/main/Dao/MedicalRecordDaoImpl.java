@@ -48,4 +48,9 @@ public class MedicalRecordDaoImpl implements MedicalRecordDao {
 		}	
 	}
 
+	@Override
+	public List<MedicalRecord> getAllMedicalRecordsByPatientId(Long patientId) {
+		return medicalRecordRepo.findByPatient_PatientId(patientId);
+	}
+
 }

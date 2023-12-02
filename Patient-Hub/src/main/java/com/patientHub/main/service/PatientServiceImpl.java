@@ -33,7 +33,7 @@ public class PatientServiceImpl implements PatientService {
 	
 	@Value("${patient.type}")
 	private List<String> patientTypeList;
-	
+    
 	private Logger LOGGER = LogManager.getLogger(PatientServiceImpl.class);
 
 	@Override
@@ -53,7 +53,7 @@ public class PatientServiceImpl implements PatientService {
 		}					
 	}
 
-	@Override	
+	@Override
 	public String savePatient(Patient patient) throws PatientMandatoryFieldNotFoundException, PatientInvalidDataException {
 		if(patient.getPatientName() == null || patient.getPatientGender() == null || patient.getPatientAge() == 0 || patient.getPatientType() == null) {
 			throw new PatientMandatoryFieldNotFoundException("Mandatory Field Not Found");

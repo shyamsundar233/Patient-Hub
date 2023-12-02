@@ -1,55 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Hub Home</title>
+    <title>Patient Hub</title>
     <style>
-        /* Your existing styles here */
-
-        .feature-section {
-            margin-top: 20px;
+    	body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        section {
+            padding: 20px;
+            text-align: center;
         }
 
         .feature {
-            margin-bottom: 15px;
+            margin-top: 20px;
         }
-
-        .feature h3 {
-            color: #007bff;
-        }
-
-        .feature p {
-            color: #555;
-        }
+        a {
+		    color: #007bff; 
+		    text-decoration: none;
+		    transition: color 0.3s;
+		}
+		
+		a:hover {
+		    color: #0056b3; 
+		}
+		
+		a:active {
+		    color: #0056b3;
+		}
+		
+		.container a {
+		    font-weight: bold; 
+		}
+		
+		.link-special {
+		    font-style: italic; 
+		}
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <h1>Patient Hub</h1> 
+    </header>
+
+    <nav>
+        <a href="/showPatients">Patients List</a>
+        <a href="/showAllMedicalRec">Medical Records</a>        
+        <a th:href="@{/showAddPatient}">Add Patient</a>
+    </nav>
+    
+    <section>
         <h2>Welcome to Patient Hub!</h2>
-        <p>Explore various features and services designed to enhance your healthcare experience.</p>
+        <p>This is your central hub for managing patient information and medical records.</p>
 
-        <!-- Features Section -->
-        <div class="feature-section">
-            <div class="feature">
-                <h3>Appointment Scheduling</h3>
-                <p>Schedule and manage your medical appointments with ease.</p>
-            </div>
-
-            <div class="feature">
-                <h3>Health Records</h3>
-                <p>Access and update your health records securely online.</p>
-            </div>
-
-            <div class="feature">
-                <h3>Prescription Refills</h3>
-                <p>Request prescription refills and track your medication history.</p>
-            </div>
-
-            <!-- Add more features as needed -->
+        <div class="feature">
+            <h3>Patients List</h3>
+            <p>View and manage the list of all registered patients. Easily search for specific patients and access their details.</p>
         </div>
 
-        <p>Get started by <a href="/login">logging in</a> or <a href="/signup">creating an account</a>.</p>
-    </div>
+        <div class="feature">
+            <h3>Medical Records</h3>
+            <p>Explore and update detailed medical records for each patient. Keep track of appointments, prescriptions, and medical history.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Appointment Scheduling</h3>
+            <p>Schedule and manage appointments for patients. Ensure a smooth and organized workflow for medical professionals and patients alike.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Reports and Analytics</h3>
+            <p>Generate reports and analyze data to gain insights into patient demographics, treatment outcomes, and overall system performance.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Patient Hub. All rights reserved.</p>
+    </footer>
 </body>
 </html>

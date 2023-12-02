@@ -4,20 +4,22 @@ package com.patientHub.main.exception;
 import org.json.simple.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+@Controller
 @ControllerAdvice
 @SuppressWarnings("unchecked")
 public class GlobalExceptionHandler {
 	
-	@ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleNotFoundException(Exception ex, Model model) {
-        model.addAttribute("error", "Not Found");
-        return "page-not-found";
+	@ExceptionHandler(ForbiddenException.class)
+	@ResponseStatus(HttpStatus.FORBIDDEN)
+    public ResponseEntity<String> handleForbiddenException(ForbiddenException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
     }
 	
 	@ExceptionHandler(UnauthorizedException.class)
@@ -26,10 +28,10 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 	
-	@ExceptionHandler(ForbiddenException.class)
-	@ResponseStatus(HttpStatus.FORBIDDEN)
-    public ResponseEntity<String> handleForbiddenException(ForbiddenException e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
+	@ExceptionHandler(AccessDeniedException.class)
+    public String handleAccessDeniedException(AccessDeniedException ex, Model model) {
+        model.addAttribute("error", ex.getMessage());
+        return "error/access-denied";
     }
 	
 	@ExceptionHandler(PatientNotFoundException.class)

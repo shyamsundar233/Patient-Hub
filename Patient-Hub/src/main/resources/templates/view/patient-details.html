@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .info-pair {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            flex-basis: 40%;
+        }
+
+        .info-value {
+            flex-basis: 60%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">Patient Information</div>
+        <div class="card-body">
+            <div class="info-pair">
+                <div class="info-label">ID:</div>
+                <div class="info-value" th:text="${patient.patientId}"></div>
+            </div>
+
+            <div class="info-pair">
+                <div class="info-label">Name:</div>
+                <div class="info-value" th:text="${patient.patientName}"></div>
+            </div>
+
+            <div class="info-pair">
+                <div class="info-label">Gender:</div>
+                <div class="info-value" th:text="${patient.patientGender}"></div>
+            </div>
+
+            <div class="info-pair">
+                <div class="info-label">Age:</div>
+                <div class="info-value" th:text="${patient.patientAge}"></div>
+            </div>
+
+            <div class="info-pair">
+                <div class="info-label">Type:</div>
+                <div class="info-value" th:text="${patient.patientType}"></div>
+            </div>
+
+            <div class="button-container">
+                <a th:href="@{/editPatient(patientId=${patient.patientId})}"><button class="button">Edit Patient</button></a>
+                <a th:href="@{/deletePatient(patientId=${patient.patientId})}"><button class="button">Delete Patient</button></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

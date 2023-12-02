@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medical Record</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+	}
+	
+	.container {
+	    max-width: 400px;
+	    margin: 50px auto;
+	    padding: 20px;
+	    background-color: #fff;
+	    border-radius: 5px;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	h2 {
+	    text-align: center;
+	}
+	
+	label {
+	    display: block;
+	    margin-top: 10px;
+	}
+	
+	input, select {
+	    width: 100%;
+	    padding: 8px;
+	    margin-top: 5px;
+	    margin-bottom: 15px;
+	    box-sizing: border-box;
+	}
+	
+	button {
+	    background-color: #4caf50;
+	    color: white;
+	    padding: 10px 15px;
+	    border: none;
+	    border-radius: 3px;
+	    cursor: pointer;
+	    width: 100%;
+	}
+	
+	button:hover {
+	    background-color: #45a049;
+	}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Medical Record</h2>
+    <form th:action="@{/addMedicalRecord}" th:object="${medicalRecord}" method="post">
+        <label for="patientDiagnosis">Patient Diagnosis:</label>
+        <input type="text" id="patientDiagnosis" name="patientDiagnosis" th:value="*{patientDiagnosis}" th:field="*{patientDiagnosis}" required>
+
+        <label for="patientTreatment">Patient Treatment:</label>
+        <input type="text" id="patientTreatment" name="patientTreatment" th:value="*{patientTreatment}" th:field="*{patientTreatment}" required>
+
+        <label for="recordDate">Record Date:</label>
+        <input type="date" id="recordDate" name="recordDate" th:value="*{recordDate}" th:field="*{recordDate}" required>
+
+        <label for="recordNotes">Record Notes:</label>
+        <textarea id="recordNotes" name="recordNotes" th:value="*{recordNotes}" th:field="*{recordNotes}" required></textarea>
+        
+        <input type="hidden" name="patient.patientId" th:field="*{patient.patientId}"/>
+        <input type="hidden" name="medicalRecordId" th:field="*{medicalRecordId}"/>
+
+        <button type="submit">Add Medical Record</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .record-details {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .record-date {
+            font-style: italic;
+        }
+
+        .record-notes {
+            margin-top: 20px;
+        }
+
+        .no-records {
+            color: #777;
+            font-style: italic;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .no-records svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .action-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+        }
+
+        .edit-button,
+        .delete-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Medical Records</h2>
+
+    <div th:if="${#lists.isEmpty(medicalRecordList)}" class="no-records">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="15" y1="9" x2="9" y2="15" />
+            <line x1="9" y1="9" x2="15" y2="15" />
+        </svg>
+        <p>No records available.</p>
+    </div>
+
+    <div th:each="medicalrec : ${medicalRecordList}" class="record-details">
+        <div class="action-buttons">
+            <a th:href="@{/editMedicalRecord(medicalRecordId=${medicalrec.medicalRecordId})}"><button class="edit-button">Edit</button></a>
+            <a th:href="@{/deleteMedicalRecord(medicalRecordId=${medicalrec.medicalRecordId})}"><button class="delete-button">Delete</button></a>
+        </div>
+        <label>ID:</label>
+        <span th:text="${medicalrec.medicalRecordId}"></span>
+        <br>
+
+        <label>Patient Name:</label>
+        <span th:text="${medicalrec.patient.patientName}"></span>
+        <br>
+
+        <label>Diagnosis:</label>
+        <span th:text="${medicalrec.patientDiagnosis}"></span>
+        <br>
+
+        <label>Treatment:</label>
+        <span th:text="${medicalrec.patientTreatment}"></span>
+        <br>
+
+        <label>Date:</label>
+        <span class="record-date"
+            th:text="${#temporals.format(medicalrec.recordDate, 'dd-MM-yyyy')}"></span>
+        <br>
+
+        <label>Notes:</label>
+        <p class="record-notes" th:text="${medicalrec.recordNotes}"></p>
+    </div>
+
+</body>
+
+</html>

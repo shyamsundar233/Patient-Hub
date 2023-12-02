@@ -13,5 +13,7 @@ public interface MedicalRecordDao {
 	public String saveMedicalRecord(MedicalRecord medicalRecord);
 	
 	public String deleteMedicalRecord(Long medicalRecordId);
+	
+	public List<MedicalRecord> getAllMedicalRecordsByPatientId(Long patientId);
 
 }
