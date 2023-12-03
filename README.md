@@ -12,7 +12,7 @@ docker run --name mysqldb2 --network patienthub-mysql-net-1 -e MYSQL_ROOT_PASSWO
 
 docker ps
 
-docker exec -it <container-id> bash
+docker exec -it #container-id# bash
 
 docker build -t patienthubmysql-2 .
 
