@@ -57,7 +57,7 @@ public class DevConfig {
     DataSource dataSource() { 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(); 
           
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/devdb");
+        driverManagerDataSource.setUrl("jdbc:mysql://mysqldb1:3306/devdb");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("Bornjuly@2001");
         driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");

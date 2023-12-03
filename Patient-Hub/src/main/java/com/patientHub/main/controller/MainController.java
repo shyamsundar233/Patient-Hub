@@ -97,7 +97,7 @@ public class MainController {
 		Patient patientById = patientService.getPatientById(patientId);
 		medicalRecord.setPatient(patientById);
 		theModel.addAttribute("medicalRecord", medicalRecord);
-		return "/view/add-medical-rec";
+		return "view/add-medical-rec";
 	}
 	
 	@PostMapping("/addMedicalRecord")
@@ -110,7 +110,7 @@ public class MainController {
 	public String editMedicalRecord(@RequestParam(name = "medicalRecordId") Long medicalRecordId, Model theModel){
 		MedicalRecord medicalRecord = medicalRecordService.getMedicalRecordById(medicalRecordId);
 		theModel.addAttribute("medicalRecord", medicalRecord);
-		return "/view/add-medical-rec";
+		return "view/add-medical-rec";
 	}
 	
 	@GetMapping("/deleteMedicalRecord")

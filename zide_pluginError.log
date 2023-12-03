@@ -1,0 +1,470 @@
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:37 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:238)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:37 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.util.SystemUtil.getEmailId(SystemUtil.java:148)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:238)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:37 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.audit.UserAudit.accessAudit(UserAudit.java:93)
+com.zoho.zide.audit.UserAudit.run(UserAudit.java:64)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:37 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.ui.wizards.pages.CreateServicePage.getUserEmail(CreateServicePage.java:87)
+com.zoho.zide.util.ZIDEConstants.<clinit>(ZIDEConstants.java:38)
+com.zoho.zide.util.ZideSettings.init(ZideSettings.java:36)
+com.zoho.zide.util.ZideSettings.<init>(ZideSettings.java:31)
+com.zoho.zide.util.ZideSettings.getInstance(ZideSettings.java:162)
+com.zoho.zide.util.ZideConfigAPI.getZideIgnoreEntries(ZideConfigAPI.java:163)
+com.zoho.zide.activator.PluginStarter.updateZideIgnoreEntries(PluginStarter.java:373)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:271)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [ERROR] 2023.12.03 AD at 12:01:38 IST
+Error while creating zide settings instance .
+java.io.IOException: Cannot find .zide_resources/zide_settings.xml
+org.eclipse.core.internal.runtime.FindSupport.openStream(FindSupport.java:280)
+org.eclipse.core.runtime.FileLocator.openStream(FileLocator.java:248)
+com.zoho.zide.util.ZideSettings.init(ZideSettings.java:41)
+com.zoho.zide.util.ZideSettings.<init>(ZideSettings.java:31)
+com.zoho.zide.util.ZideSettings.getInstance(ZideSettings.java:162)
+com.zoho.zide.util.ZideConfigAPI.getZideIgnoreEntries(ZideConfigAPI.java:163)
+com.zoho.zide.activator.PluginStarter.updateZideIgnoreEntries(PluginStarter.java:373)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:271)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:38 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getHgVersion(SystemUtil.java:93)
+com.zoho.zide.util.SystemUtil.logStartupInfo(SystemUtil.java:222)
+com.zoho.zide.scheduler.SchedulerStartup.earlyStartup(SchedulerStartup.java:91)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:38 IST
+ZIDE Startup--------------------------------------------------------------------------------
+Eclipse version = 4.26.0.v20221123-1800
+Java version = 17.0.7
+OS = Mac OS X
+hg version = 
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:38 IST
+Job Hacksaw sync Scheduler started
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:42 IST
+Failed to download http://zide.csez.zohocorpin.com/softwares/zide_config.xml
+java.net.UnknownHostException: zide
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.ZideConfig.downloadConfiguration(ZideConfig.java:586)
+com.zoho.zide.scheduler.AutomaticUpdateJob$2.run(AutomaticUpdateJob.java:123)
+org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:46 IST
+Job ZideWorkspaceSettings Started
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:47 IST
+Failed to download http://zide.csez.zohocorpin.com/downloads/softwares/docker/service.sh
+java.net.UnknownHostException: zide
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:47 IST
+RemoteFileDownload: URL = http://zide.csez.zohocorpin.com/downloads/softwares/docker/service.sh; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:47 IST
+Failed to download http://build.csez.zohocorpin.com/integ/hg_utils/milestones/HG_UTILS_LOCAL_BUILD_BRANCH/HG_UTILS_LOCAL_BUILD_ZIDE_M1/hg_utils.zip
+java.net.UnknownHostException: build
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:47 IST
+RemoteFileDownload: URL = http://build.csez.zohocorpin.com/integ/hg_utils/milestones/HG_UTILS_LOCAL_BUILD_BRANCH/HG_UTILS_LOCAL_BUILD_ZIDE_M1/hg_utils.zip; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:47 IST
+Failed to download http://cm-server.csez.zohocorpin.com/thirdparty_downloads/ant/new/apache-ant-1.8.1.zip
+java.io.IOException: Invalid response(301)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:87)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:01:47 IST
+RemoteFileDownload: URL = http://cm-server.csez.zohocorpin.com/thirdparty_downloads/ant/new/apache-ant-1.8.1.zip; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:01:47 IST
+Error while clone/update codecheck repository
+java.lang.Exception
+com.zoho.zide.util.UrlUtil.getDefaultCloneCredentials(UrlUtil.java:402)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:47)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:20 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:238)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:20 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.util.SystemUtil.getEmailId(SystemUtil.java:148)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:238)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:20 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.util.SystemUtil.getHgUserName(SystemUtil.java:120)
+com.zoho.zide.audit.UserAudit.accessAudit(UserAudit.java:93)
+com.zoho.zide.audit.UserAudit.run(UserAudit.java:64)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:20 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getDefaultHgUser(SystemUtil.java:69)
+com.zoho.zide.ui.wizards.pages.CreateServicePage.getUserEmail(CreateServicePage.java:87)
+com.zoho.zide.util.ZIDEConstants.<clinit>(ZIDEConstants.java:38)
+com.zoho.zide.util.ZideSettings.init(ZideSettings.java:36)
+com.zoho.zide.util.ZideSettings.<init>(ZideSettings.java:31)
+com.zoho.zide.util.ZideSettings.getInstance(ZideSettings.java:162)
+com.zoho.zide.util.ZideConfigAPI.getZideIgnoreEntries(ZideConfigAPI.java:163)
+com.zoho.zide.activator.PluginStarter.updateZideIgnoreEntries(PluginStarter.java:373)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:271)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [ERROR] 2023.12.03 AD at 12:07:21 IST
+Error while creating zide settings instance .
+java.io.IOException: Cannot find .zide_resources/zide_settings.xml
+org.eclipse.core.internal.runtime.FindSupport.openStream(FindSupport.java:280)
+org.eclipse.core.runtime.FileLocator.openStream(FileLocator.java:248)
+com.zoho.zide.util.ZideSettings.init(ZideSettings.java:41)
+com.zoho.zide.util.ZideSettings.<init>(ZideSettings.java:31)
+com.zoho.zide.util.ZideSettings.getInstance(ZideSettings.java:162)
+com.zoho.zide.util.ZideConfigAPI.getZideIgnoreEntries(ZideConfigAPI.java:163)
+com.zoho.zide.activator.PluginStarter.updateZideIgnoreEntries(PluginStarter.java:373)
+com.zoho.zide.activator.PluginStarter.earlyStartup(PluginStarter.java:271)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:21 IST
+Error while executing process
+java.io.IOException: Cannot run program "" (in directory "/Users/shyam-17967"): error=2, No such file or directory
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+com.zoho.zide.command.ProcessWrapper.start(ProcessWrapper.java:51)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:150)
+com.zoho.zide.command.ZideCommand.execute(ZideCommand.java:82)
+com.zoho.zide.util.SystemUtil.getHgVersion(SystemUtil.java:93)
+com.zoho.zide.util.SystemUtil.logStartupInfo(SystemUtil.java:222)
+com.zoho.zide.scheduler.SchedulerStartup.earlyStartup(SchedulerStartup.java:91)
+org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:21 IST
+ZIDE Startup--------------------------------------------------------------------------------
+Eclipse version = 4.26.0.v20221123-1800
+Java version = 17.0.7
+OS = Mac OS X
+hg version = 
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:21 IST
+Job Hacksaw sync Scheduler started
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:24 IST
+Failed to download http://zide.csez.zohocorpin.com/softwares/zide_config.xml
+java.net.UnknownHostException: zide
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.ZideConfig.downloadConfiguration(ZideConfig.java:586)
+com.zoho.zide.scheduler.AutomaticUpdateJob$2.run(AutomaticUpdateJob.java:123)
+org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:28 IST
+Job ZideWorkspaceSettings Started
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:28 IST
+Failed to download http://zide.csez.zohocorpin.com/downloads/softwares/docker/service.sh
+java.net.UnknownHostException: zide
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:28 IST
+RemoteFileDownload: URL = http://zide.csez.zohocorpin.com/downloads/softwares/docker/service.sh; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:29 IST
+Failed to download http://build.csez.zohocorpin.com/integ/hg_utils/milestones/HG_UTILS_LOCAL_BUILD_BRANCH/HG_UTILS_LOCAL_BUILD_ZIDE_M1/hg_utils.zip
+java.net.UnknownHostException: build
+java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+java.base/java.net.Socket.connect(Socket.java:633)
+java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:279)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:384)
+java.base/sun.net.www.http.HttpClient.New(HttpClient.java:406)
+java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1309)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1242)
+java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1128)
+java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1057)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:85)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:29 IST
+RemoteFileDownload: URL = http://build.csez.zohocorpin.com/integ/hg_utils/milestones/HG_UTILS_LOCAL_BUILD_BRANCH/HG_UTILS_LOCAL_BUILD_ZIDE_M1/hg_utils.zip; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:29 IST
+Failed to download http://cm-server.csez.zohocorpin.com/thirdparty_downloads/ant/new/apache-ant-1.8.1.zip
+java.io.IOException: Invalid response(301)
+com.zoho.zide.resource.provider.HttpFileProvider.preConnect(HttpFileProvider.java:87)
+com.zoho.zide.resource.provider.HttpFileProvider.start(HttpFileProvider.java:47)
+com.zoho.zide.resource.handler.ResourceHandler.getResource(ResourceHandler.java:29)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:289)
+com.zoho.zide.util.FileUtils.downloadFile(FileUtils.java:276)
+com.zoho.zide.util.FileUtils.downloadAndExtract(FileUtils.java:263)
+com.zoho.zide.codecheck.LiveStreamReader.sync(LiveStreamReader.java:51)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:46)
+com.zoho.zide.codecheck.LiveStreamReader.forceSync(LiveStreamReader.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.init(ZideWorkspaceSettings.java:92)
+com.zoho.zide.activator.ZideWorkspaceSettings.lambda$run$0(ZideWorkspaceSettings.java:41)
+com.zoho.zide.activator.ZideWorkspaceSettings.runIf(ZideWorkspaceSettings.java:104)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:41)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+v2.0.4 [INFO] 2023.12.03 AD at 12:07:29 IST
+RemoteFileDownload: URL = http://cm-server.csez.zohocorpin.com/thirdparty_downloads/ant/new/apache-ant-1.8.1.zip; status = FAILED; size = 0B
+
+v2.0.4 [WARNING] 2023.12.03 AD at 12:07:29 IST
+Error while clone/update codecheck repository
+java.lang.Exception
+com.zoho.zide.util.UrlUtil.getDefaultCloneCredentials(UrlUtil.java:402)
+com.zoho.zide.activator.ZideWorkspaceSettings.run(ZideWorkspaceSettings.java:47)
+org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

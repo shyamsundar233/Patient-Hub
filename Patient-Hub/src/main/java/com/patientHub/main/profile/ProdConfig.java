@@ -62,7 +62,7 @@ public class ProdConfig {
     DataSource dataSource() { 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(); 
           
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/proddb");
+        driverManagerDataSource.setUrl("jdbc:mysql://mysqldb2:3306/proddb");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("Bornjuly@2001");
         driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -129,7 +129,7 @@ public class ProdConfig {
     				.requestMatchers(new AntPathRequestMatcher("/addPatient", HttpMethod.POST.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/showAddMedicalRec", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/addMedicalRecord", HttpMethod.POST.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
-    				.requestMatchers(new AntPathRequestMatcher("/editPatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
+    				.requestMatchers(new AntPathRequestMatcher("/editPatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
     				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
