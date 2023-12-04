@@ -53,7 +53,7 @@ public class QaConfig {
     DataSource dataSource() { 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(); 
           
-        driverManagerDataSource.setUrl("jdbc:mysql://mysqldb2:3306/qadb");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/qadb1?createDatabaseIfNotExist=true");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("Bornjuly@2001");
         driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -124,6 +124,8 @@ public class QaConfig {
     				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(QA_ANALYST, AUTOMATION_ENGINEER, DOCUMENTATION_SPECIALIST, QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(QA_MANAGER, PERFORMANCE_ENGINEER, TEST_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddUser")).permitAll()
+    				.requestMatchers(new AntPathRequestMatcher("/createUser")).permitAll()
     				.anyRequest().authenticated()
     		);
     	

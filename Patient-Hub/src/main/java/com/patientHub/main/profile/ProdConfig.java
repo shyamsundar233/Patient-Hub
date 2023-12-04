@@ -62,7 +62,7 @@ public class ProdConfig {
     DataSource dataSource() { 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(); 
           
-        driverManagerDataSource.setUrl("jdbc:mysql://mysqldb2:3306/proddb");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/proddb?createDatabaseIfNotExist=true");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("Bornjuly@2001");
         driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -133,6 +133,8 @@ public class ProdConfig {
     				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
     				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, INSURANCE_AGENT, LAB_TECHNICIAN, NURSE, PHARMACIST)
     				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(ADMIN, DOCTOR, LAB_TECHNICIAN)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddUser")).permitAll()
+    				.requestMatchers(new AntPathRequestMatcher("/createUser")).permitAll()
     				.anyRequest().authenticated()
     		)
     		.exceptionHandling(exception -> exception

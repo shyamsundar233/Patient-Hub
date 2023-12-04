@@ -1,10 +1,13 @@
 package com.patientHub.main.controller;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +15,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.patientHub.main.model.Iamuser;
 import com.patientHub.main.model.MedicalRecord;
+import com.patientHub.main.model.NewUser;
 import com.patientHub.main.model.Patient;
+import com.patientHub.main.model.Userrole;
+import com.patientHub.main.service.IamuserService;
 import com.patientHub.main.service.MedicalRecordService;
 import com.patientHub.main.service.PatientService;
+import com.patientHub.main.service.UserroleService;
 
 @Controller
 public class MainController {
@@ -26,11 +34,23 @@ public class MainController {
 	@Autowired
 	private MedicalRecordService medicalRecordService;
 	
+	@Autowired
+	private IamuserService iamuserService;
+	
+	@Autowired
+	private UserroleService userroleService;
+	
 	@Value("${patient.gender}")
 	private List<String> genderList;
 	
 	@Value("${patient.type}")
 	private List<String> typesList;
+	
+	@Value("${password.regex}")
+	private String passwordRegex; 
+	
+	@Value("${roles.list}")
+	private List<String> rolesList;
 	
 	@GetMapping("/")
 	public String index(Authentication authentication, Model theModel) {
@@ -119,6 +139,69 @@ public class MainController {
 		medicalRecordService.deleteMedicalRecord(medicalRecordId);
 		
 		return "redirect:/showMedicalRec?patientId=" + patientId;
+	}
+	
+	@GetMapping("/showAddUser")
+	public String showAddUser(Model theModel) {
+		theModel.addAttribute("newUser", new NewUser());
+		theModel.addAttribute("userRoles", rolesList);
+		return "view/add-user";
+	}
+	
+	@PostMapping("/createUser")
+	public String createUser(@ModelAttribute NewUser newUser) throws Exception {
+		validateNewUser(newUser);
+		
+		Iamuser iamuser = new Iamuser();		
+		iamuser.setUserName(newUser.getUserName());
+		iamuser.setUserPassword(newUser.getUserPassword());
+		iamuser.setUserStatus(1);
+		
+		iamuserService.saveIamUser(iamuser);
+		
+		Userrole userrole = new Userrole();
+		userrole.setUserName(newUser.getUserName());
+		userrole.setUserRole(newUser.getUserRole());
+		
+		userroleService.saveUserRole(userrole);
+		
+		return "redirect:/logout";
+	}
+
+	private void validateNewUser(NewUser newUser) throws Exception {
+		
+		String userName = newUser.getUserName();
+		if(userName.isEmpty() || userName.length() > 50 || userName.chars().anyMatch(Character::isDigit)) {
+			throw new Exception("Invalid user name");
+		}
+		
+		String userPassword = newUser.getUserPassword();
+		if(userPassword.isEmpty() || userPassword.length() < 8 || userPassword.length() > 50 || !validatePassword(userPassword)) {
+			throw new Exception("Invalid user password");
+		}
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		userPassword = passwordEncoder.encode(userPassword);
+		newUser.setUserPassword(userPassword);
+		
+		String userRole = newUser.getUserRole();
+		userRole = "ROLE_" + userRole.toUpperCase();
+		newUser.setUserRole(userRole);
+		
+	}
+	
+	/*
+	 * At least 8 characters long
+	 * Contains at least one digit (0-9)
+	 * Contains at least one lowercase letter (a-z)
+	 * Contains at least one uppercase letter (A-Z)
+	 * Contains at least one special character from the set [@#$%^&+=!]
+	 * Does not contain whitespaces
+	 * */
+	
+	private boolean validatePassword(String userPassword) {
+		Pattern passwordPattern = Pattern.compile(passwordRegex);
+		Matcher matcher = passwordPattern.matcher(userPassword);
+		return matcher.matches();
 	}
 
 }

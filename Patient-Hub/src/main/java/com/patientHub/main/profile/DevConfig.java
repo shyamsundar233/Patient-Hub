@@ -57,7 +57,7 @@ public class DevConfig {
     DataSource dataSource() { 
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource(); 
           
-        driverManagerDataSource.setUrl("jdbc:mysql://mysqldb1:3306/devdb");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/devdb?createDatabaseIfNotExist=true");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("Bornjuly@2001");
         driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -128,6 +128,8 @@ public class DevConfig {
     				.requestMatchers(new AntPathRequestMatcher("/deletePatient", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, TEAM_LEAD)
     				.requestMatchers(new AntPathRequestMatcher("/editMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, ARCHITECT, DEVELOPMENT_MANAGER, QUALITY_ENGINEER, TEAM_LEAD, DEVELOPER, SECURITY_ENGINEER)
     				.requestMatchers(new AntPathRequestMatcher("/deleteMedicalRecord", HttpMethod.GET.toString())).hasAnyRole(SYSTEM_ADMINISTRATOR, TEAM_LEAD)
+    				.requestMatchers(new AntPathRequestMatcher("/showAddUser")).permitAll()
+    				.requestMatchers(new AntPathRequestMatcher("/createUser")).permitAll()
     				.anyRequest().authenticated()
     		);
     	

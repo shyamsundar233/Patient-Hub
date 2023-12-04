@@ -83,5 +83,15 @@
     "name": "role.team_lead",
     "type": "java.lang.String",
     "description": "A description for 'role.team_lead'"
+  },
+  {
+    "name": "password.regex",
+    "type": "java.lang.String",
+    "description": "A description for 'password.regex'"
+  },
+  {
+    "name": "roles.list",
+    "type": "java.lang.String",
+    "description": "A description for 'roles.list'"
   }
 ]}
