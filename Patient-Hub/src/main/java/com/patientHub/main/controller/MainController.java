@@ -165,7 +165,7 @@ public class MainController {
 		
 		userroleService.saveUserRole(userrole);
 		
-		return "redirect:/logout";
+		return "redirect:/login";
 	}
 
 	private void validateNewUser(NewUser newUser) throws Exception {

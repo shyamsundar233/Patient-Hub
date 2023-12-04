@@ -1,1 +1,3 @@
 /.metadata/
+.zide/codecheck.conf
+zide_pluginError.log
